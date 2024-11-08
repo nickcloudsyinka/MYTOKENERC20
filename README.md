@@ -1,30 +1,25 @@
-# OJODELE Token Smart Contract
+# Token Contract
 
-## Overview
-`OJODELE` is an ERC20-compliant token with minting and burning functionalities. It extends the standard ERC20 token by incorporating the ability to mint and burn tokens, controlled by the contract's owner. This contract also utilizes OpenZeppelin's `ERC20`, `ERC20Burnable`, and `Ownable` contracts to ensure robust and secure token management.
+The `Token` smart contract is an ERC20-compliant token with added functionalities, such as minting and burning, and is fully owned and controlled by a specified owner. It is based on OpenZeppelin’s secure library, providing a solid foundation for ERC20 tokens with additional features.
 
-## Features
-- **Minting**: The contract owner can mint new tokens to a specified address.
-- **Burning**: The contract owner can burn tokens from a specified account.
-- **Ownership Control**: The contract owner has exclusive rights to mint, burn, and transfer ownership.
-- **Standard ERC20 Functionality**: Implements the standard ERC20 token functions such as `transfer`, `approve`, `allowance`, and `transferFrom`.
+## Contract Overview
 
-## Contract Details
-
-- **Token Name**: ojodele
-- **Token Symbol**: OJODELE
-- **Solidity Version**: ^0.8.19
+- **Token Name**: MarySpidy
+- **Token Symbol**: MARYSPIDY
+- **Compiler Version**: `^0.8.19`
 - **License**: MIT
 
-## Installation and Deployment
+## Features
 
-### Prerequisites
-- [Node.js](https://nodejs.org/)
-- [Hardhat](https://hardhat.org/)
-- [OpenZeppelin Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts)
+This contract inherits from OpenZeppelin’s libraries and provides several key features:
 
-### Step 1: Clone the repository
+- **ERC20**: Standard ERC20 token functionality.
+- **ERC20Burnable**: Allows token burning, reducing the total supply.
+- **Ownable**: Restricts certain functions to the contract owner.
 
-```bash
-git clone https://github.com/your-repository/ojodele-token
-cd ojodele-token
+## Constructor
+
+The contract constructor initializes the token with a name, symbol, and owner.
+
+```solidity
+constructor(address initialOwner) ERC20("MarySpidy", "MARYSPIDY") Ownable(initialOwner) {}
